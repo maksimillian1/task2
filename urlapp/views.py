@@ -1,3 +1,5 @@
 from django.shortcuts import render
 
-# Create your views here.
+def viewText(request):
+    name = "Mx"
+    return render(request, 'urlapp/index.html', context={'name': name})

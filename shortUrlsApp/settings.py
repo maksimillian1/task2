@@ -27,7 +27,7 @@ SECRET_KEY = '^u5&x*5kbo!vfec#k^-&d_#jpw3qqzq#n)s#l-k4v1h4=mu47&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['makeshorturlsapp.herokuapp.com']
+ALLOWED_HOSTS = ['localhost','makeshorturlsapp.herokuapp.com']
 
 
 # Application definition
@@ -58,7 +58,9 @@ ROOT_URLCONF = 'shortUrlsApp.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(os.path.dirname(__file__), 'templates'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
