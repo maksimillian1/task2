@@ -1,3 +1,4 @@
+{% extends 'base.html'%}
 
 {% block content %}
 
@@ -9,12 +10,12 @@
     <button type="submit" class='btn btn-primary'>Get Short URL</button>
   </form>
 
-{% endblock %}
+  {% if messages %}
+  <ul class="messages">
+      {% for message in messages %}
+      <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+      {% endfor %}
+  </ul>
+  {% endif %}
 
-{% if messages %}
-<ul class="messages">
-    {% for message in messages %}
-    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-    {% endfor %}
-</ul>
-{% endif %}
+{% endblock %}

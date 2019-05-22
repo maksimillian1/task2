@@ -2,11 +2,16 @@ from django.shortcuts import render, redirect
 from django.views.generic import View
 from django.contrib import messages
 from pyshorteners import Shortener
-
+from .models import ShorterUrl
 
 from .models import ShorterUrl
 from .forms import UrlForm
 
+
+def list_urls(request):
+    urls = ShorterUrl.objects.all()
+    return render(request, 'urlapp/url-stats.html', context={'urls': urls})
+    
 
 class CreateShortUrl(View):
 

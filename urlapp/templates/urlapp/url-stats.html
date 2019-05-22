@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<ul class="list-group">
+
+  {% for url in urls %}
+  <li class="list-group-item">
+        <p class="card-title">{{url.base_url}}</p>
+        <p class="card-text">{{url.create_date}}</p>
+  </li>
+
+  {% endfor %}
+</ul>
+{% endblock %}
